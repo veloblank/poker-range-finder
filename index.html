@@ -22,12 +22,11 @@
 					<div class="villain-range">
 					
 					</div>
-          <div class="stack-size">
-            <input type="text" oninput="onStackChange(this)" placeholder="Effective Stack">
-            
+          <div class="stack-size" id="stack-size">
+            <input type="number" oninput="onStackChange(this)" step="0.25" autofocus placeholder="Effective Stack" value="0">
           </div>
           <div class="hero-hand">
-						<input type="text" oninput="onHandChange(this)" autofocus placeholder="Hero Hand" />
+						<input type="text" oninput="onHandChange(this)" placeholder="Hero Hand" />
 							
 						</div>
             <div id="range-image"></div>

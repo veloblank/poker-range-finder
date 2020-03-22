@@ -1,5 +1,7 @@
 let rangeSources = ["src='/images/jackpot.jpg'", "src='/images/top-5.png' data-range='13'", "src='/images/top-7.png' data-range='12'", "src='/images/top-10.png' data-range='11'", "src='/images/top-12.png' data-range='10'", "src='/images/top-15.png' data-range='9'", "src='/images/top-17.png' data-range='8'", "src='/images/top-20.png' data-range='7'", "src='/images/top-22.png' data-range='6'", "src='/images/top-25.png' data-range='5'", "src='/images/top-27.png' data-range='4'", "src='/images/top-30.png' data-range='3'", "src='/images/top-35.png' data-range='2'", "src='/images/top-40.png' data-range='1'", "src='/images/top-50.png' data-range='0'"];
 
+let sklanskyRanges = ["AA", "KK", "AKS", "QQ", "AKO", "JJ", "AQS", "TT", "AQO", "99", "AJS", "88", "ATS", "AJO", "77", "66", "ATO", "A9S", "55", "A8S", "KQS", "44", "A9O", "A7S", "KJS", "A5S", "A8O", "A6S", "A4S", "33", "KTS", "A7O", "A3S", "KQO", "A2S", "A5O", "A6O", "A4O", "KJO", "QJS", "A3O", "22", "K9S", "A2O", "KTO", "QTS", "K8S", "K7S", "JTS", "K9O", "K6S", "QJO", "Q9S", "K5S", "K8O", "K4S", "QTO", "K7O", "K3S", "K2S", "Q8S", "K6O", "J9S", "K5O", "Q9O", "JTO", "K4O", "Q7S", "T9S", "Q6S", "K3O", "J8S", "Q5S", "K2O", "Q8O", "Q4S", "J9O", "Q3S", "T8S", "J7S", "Q7O", "Q2S", "Q6O", "98S", "Q5O", "J8O", "T9O", "J6S", "T7S", "J5S", "Q4O", "J4S", "J7O", "Q3O", "97S", "T8O", "J3S", "T6S", "Q2O", "J2S", "87S", "J6O", "98O", "T7O", "96S", "J5O", "T5S", "T4S", "86S", "J4O", "T6O", "97O", "T3S", "76S", "95S", "J3O", "T2S", "87O", "85S", "96O", "T5O", "J2O", "75S", "94S", "T4O", "65S", "86O", "93S", "84S", "95O", "T3O", "76O", "92S", "74S", "54S", "T2O", "85O", "64S", "83S", "94O", "75O", "82S", "73S", "93O", "65O", "53S", "63S", "84O", "92O", "43S", "74O", "72S", "54O", "64O", "52S", "62S", "83O", "42S", "82O", "73O", "53O", "63O", "32S", "43O", "72O", "52O", "62O", "42O", "32O"]
+
 let heroHands10 = {
   points: 10, range: ["AA", "KK", "AKS", "QQ", "AKO", "JJ", "AQS", "TT", "AQO"]
 };
@@ -38,6 +40,8 @@ let stackPoints;
 let equityPoints;
 
 window.addEventListener("wheel", onHandleScroll);
+let stackHover = document.getElementById("stack-size");
+stackHover.addEventListener("onmouseover", () => console.log("Hello"))
 
 function onHandleScroll() {
   if (range < rangeSources.length) {
@@ -50,6 +54,14 @@ function onHandleScroll() {
     range++
   } else {
     range = 1;
+  }
+  let decision = document.getElementById("push-or-fold")
+  let totalPoints = villainRange + heroPoints + stackPoints + equityPoints;
+  decision.innerHTML = totalPoints;
+  if (!totalPoints || totalPoints < 22) {
+    document.getElementsByTagName("body")[0].style.backgroundColor = "red"
+  } else {
+    document.getElementsByTagName("body")[0].style.backgroundColor = "green"
   }
 }
 
@@ -134,19 +146,23 @@ function onStackChange(e) {
   } else if (effStack <= 10) {
     stackPoints = 1
     stack.innerHTML = stackPoints;
+  } else if (effStack > 10) {
+    stackPoints = -1
+    stack.innerHTML = stackPoints;
   }
 }
 
 function handleEquityClick(e) {
+  let equities = document.getElementsByClassName("equity");
+  for (let equity of equities) {
+    equity.style.backgroundColor = "white"
+    equity.style.color = "black"
+  }
+
   let pointsHTML = document.getElementById("equity-points");
   equityPoints = parseInt(e.dataset.points)
   pointsHTML.innerHTML = equityPoints;
-  let totalPoints = villainRange + heroPoints + stackPoints + equityPoints;
-  let decision = document.getElementById("push-or-fold")
-  decision.innerHTML = totalPoints;
-  if (!totalPoints || totalPoints < 22) {
-    document.getElementsByTagName("body")[0].style.backgroundColor = "red"
-  } else {
-    document.getElementsByTagName("body")[0].style.backgroundColor = "green"
-  }
+  e.style.backgroundColor = "black"
+  e.style.color = "white"
 }
+
