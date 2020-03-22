@@ -33,7 +33,10 @@ let heroHands1 = {
 
 let range = 1;
 let villainRange;
+let heroPoints;
 let stackPoints;
+let equityPoints;
+
 window.addEventListener("wheel", onHandleScroll);
 
 function onHandleScroll() {
@@ -42,7 +45,7 @@ function onHandleScroll() {
     let input = document.getElementById("range-input");
     let rangeSrc = rangeSources[range];
     rangeImage.innerHTML = `<img ${rangeSrc} />`
-    villainRange = rangeImage.firstChild.dataset.range
+    villainRange = parseInt(rangeImage.firstChild.dataset.range)
     input.innerHTML = villainRange
     range++
   } else {
@@ -55,33 +58,43 @@ function onHandChange(e) {
   let heroHand = e.value.toUpperCase();
   if (heroHands10.range.includes(heroHand)) {
     handValue.innerHTML = 10;
+    heroPoints = 10
   }
   if (heroHands9.range.includes(heroHand)) {
     handValue.innerHTML = 9;
+    heroPoints = 9
   }
   if (heroHands8.range.includes(heroHand)) {
     handValue.innerHTML = 8;
+    heroPoints = 8
   }
   if (heroHands7.range.includes(heroHand)) {
     handValue.innerHTML = 7;
+    heroPoints = 7
   }
   if (heroHands6.range.includes(heroHand)) {
     handValue.innerHTML = 6;
+    heroPoints = 6
   }
   if (heroHands5.range.includes(heroHand)) {
     handValue.innerHTML = 5;
+    heroPoints = 5
   }
   if (heroHands4.range.includes(heroHand)) {
     handValue.innerHTML = 4;
+    heroPoints = 4
   }
   if (heroHands3.range.includes(heroHand)) {
     handValue.innerHTML = 3;
+    heroPoints = 3
   }
   if (heroHands2.range.includes(heroHand)) {
     handValue.innerHTML = 2;
+    heroPoints = 2
   }
   if (heroHands1.range.includes(heroHand)) {
     handValue.innerHTML = 1;
+    heroPoints = 1
   }
 }
 
@@ -124,5 +137,16 @@ function onStackChange(e) {
   }
 }
 
-
-
+function handleEquityClick(e) {
+  let pointsHTML = document.getElementById("equity-points");
+  equityPoints = parseInt(e.dataset.points)
+  pointsHTML.innerHTML = equityPoints;
+  let totalPoints = villainRange + heroPoints + stackPoints + equityPoints;
+  let decision = document.getElementById("push-or-fold")
+  decision.innerHTML = totalPoints;
+  if (!totalPoints || totalPoints < 22) {
+    document.getElementsByTagName("body")[0].style.backgroundColor = "red"
+  } else {
+    document.getElementsByTagName("body")[0].style.backgroundColor = "green"
+  }
+}

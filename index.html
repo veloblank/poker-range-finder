@@ -7,26 +7,47 @@
 		<title>Poker Range Finder</title>
 	</head>
 	<body>
-		<header></header>
+		<header>
+      <div class="rhse">
+        <div class="present-range large presentation">R: <span class="large" id="range-input"></span></div>
+        <div class="present-hand large presentation">H: <span id="hand-value"></span></div>
+        <div class="present-stack large presentation">S: <span id="stack-value">0</span></div>
+        <div class="present-equity large presentation">E: <span id="equity-points">0</span></div>
+      </div>
+    </header>
 		<main>
 			<div class="container">
+        <div id="push-or-fold"></div>
 				<div class="ranges">
 					<div class="villain-range">
-						Range Points: <span id="range-input"></span>
+					
 					</div>
           <div class="stack-size">
             <input type="text" oninput="onStackChange(this)" placeholder="Effective Stack">
-            <span id="stack-value">0</span>
+            
           </div>
           <div class="hero-hand">
 						<input type="text" oninput="onHandChange(this)" autofocus placeholder="Hero Hand" />
-							<span id="hand-value"></span>
+							
 						</div>
             <div id="range-image"></div>
 					</div>
         </div>
-        <div class="equity">
-          <img id="bvb" src="/images/bvb.png" >
+        <div class="eff-equity">
+          
+          <div class="equity" onclick="handleEquityClick(this)" data-points="13">SCREWED</div>
+          <div class="equity" onclick="handleEquityClick(this)" data-points="12">750 Chips</div>
+          <div class="equity" onclick="handleEquityClick(this)" data-points="11">1000 Chips</div>
+          <div class="equity" onclick="handleEquityClick(this)" data-points="10">STARTING STACK - LAST OR SECOND- cannot 2X to NEXT</div>
+          <div class="equity" onclick="handleEquityClick(this)" data-points="9">LAST can 2X to 2ND</div>
+          <div class="equity" onclick="handleEquityClick(this)" data-points="8">2nd place, CLOSE to 3rd, cannot 2x to 1st</div>
+          <div class="equity" onclick="handleEquityClick(this)" data-points="7">6 points</div>
+          <div class="equity" onclick="handleEquityClick(this)" data-points="6">7 points</div>
+          <div class="equity" onclick="handleEquityClick(this)" data-points="5">2nd place, can 2x to 1st</div>
+          <div class="equity" onclick="handleEquityClick(this)" data-points="4">2nd place, FAR from 1st</div>
+          <div class="equity" onclick="handleEquityClick(this)" data-points="3">2nd place, CLOSE to 1st</div>
+          <div class="equity" onclick="handleEquityClick(this)" data-points="2">2nd place, CLOSE to 1st FAR from LAST</div>
+          <div class="equity" onclick="handleEquityClick(this)" data-points="1">CLOSE 1st, or 2nd, others SCREWED</div>
         </div>
 			</div>
 		</main>

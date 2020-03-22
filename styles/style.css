@@ -1,7 +1,6 @@
 body {
 	overflow: hidden;
 }
-
 img {
 	display: block;
 	width: 300px;
@@ -10,4 +9,36 @@ img {
 
 #bvb {
 	height: auto;
+}
+
+.equity {
+	border: 2px solid black;
+	width: 300px;
+	height: 40px;
+	text-align: center;
+}
+
+.equity:hover {
+	cursor: pointer;
+}
+
+.container {
+	display: inline-block;
+}
+
+.dark {
+	background: black;
+	color: white;
+}
+
+.large {
+	font-size: 34px;
+}
+
+.rhse {
+	display: flex;
+}
+
+.presentation {
+	margin: 5px 35px 10px 35px;
 }
