@@ -32,6 +32,8 @@ let heroHands1 = {
 };
 
 let range = 1;
+let villainRange;
+let stackPoints;
 window.addEventListener("wheel", onHandleScroll);
 
 function onHandleScroll() {
@@ -40,7 +42,8 @@ function onHandleScroll() {
     let input = document.getElementById("range-input");
     let rangeSrc = rangeSources[range];
     rangeImage.innerHTML = `<img ${rangeSrc} />`
-    input.value = rangeImage.firstChild.dataset.range
+    villainRange = rangeImage.firstChild.dataset.range
+    input.innerHTML = villainRange
     range++
   } else {
     range = 1;
@@ -79,6 +82,45 @@ function onHandChange(e) {
   }
   if (heroHands1.range.includes(heroHand)) {
     handValue.innerHTML = 1;
+  }
+}
+
+function onStackChange(e) {
+  let effStack = e.value;
+  let stack = document.getElementById("stack-value");
+  if (effStack <= 2) {
+    stackPoints = 11
+    stack.innerHTML = stackPoints;
+  } else if (effStack <= 3) {
+    stackPoints = 10
+    stack.innerHTML = stackPoints;
+  } else if (effStack <= 3.5) {
+    stackPoints = 9
+    stack.innerHTML = stackPoints;
+  } else if (effStack <= 4) {
+    stackPoints = 8
+    stack.innerHTML = stackPoints;
+  } else if (effStack <= 5) {
+    stackPoints = 7
+    stack.innerHTML = stackPoints;
+  } else if (effStack <= 6) {
+    stackPoints = 6
+    stack.innerHTML = stackPoints;
+  } else if (effStack <= 7) {
+    stackPoints = 5
+    stack.innerHTML = stackPoints;
+  } else if (effStack <= 7.75) {
+    stackPoints = 4
+    stack.innerHTML = stackPoints;
+  } else if (effStack <= 8.25) {
+    stackPoints = 3
+    stack.innerHTML = stackPoints;
+  } else if (effStack <= 9) {
+    stackPoints = 2
+    stack.innerHTML = stackPoints;
+  } else if (effStack <= 10) {
+    stackPoints = 1
+    stack.innerHTML = stackPoints;
   }
 }
 
