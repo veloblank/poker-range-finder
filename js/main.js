@@ -1,33 +1,34 @@
-let rangeSources = ["src='/images/jackpot.jpg'", "src='/images/top-5.png' data-range='5'", "src='/images/top-7.png' data-range='7'", "src='/images/top-10.png' data-range='10'", "src='/images/top-12.png' data-range='12'", "src='/images/top-15.png' data-range='15'", "src='/images/top-17.png' data-range='17'", "src='/images/top-20.png' data-range='20'", "src='/images/top-22.png' data-range='22'", "src='/images/top-25.png' data-range='25'", "src='/images/top-27.png' data-range='27'", "src='/images/top-30.png' data-range='30'", "src='/images/top-35.png' data-range='35'", "src='/images/top-40.png' data-range='40'", "src='/images/top-50.png' data-range='50'"];
+let rangeSources = ["src='/images/jackpot.jpg'", "src='/images/top-5.png' data-range='13'", "src='/images/top-7.png' data-range='12'", "src='/images/top-10.png' data-range='11'", "src='/images/top-12.png' data-range='10'", "src='/images/top-15.png' data-range='9'", "src='/images/top-17.png' data-range='8'", "src='/images/top-20.png' data-range='7'", "src='/images/top-22.png' data-range='6'", "src='/images/top-25.png' data-range='5'", "src='/images/top-27.png' data-range='4'", "src='/images/top-30.png' data-range='3'", "src='/images/top-35.png' data-range='2'", "src='/images/top-40.png' data-range='1'", "src='/images/top-50.png' data-range='0'"];
+
 let heroHands10 = {
-  points: 10, range: ["AA", "KK", "AKs", "QQ", "AKo", "JJ", "AQs", "TT", "AQo"]
+  points: 10, range: ["AA", "KK", "AKS", "QQ", "AKO", "JJ", "AQS", "TT", "AQO"]
 };
 let heroHands9 = {
-  points: 9, range: ["99", "AJs", "88", "ATs", "AJo", "77", "66", "ATo", "A9s", "55", "A8s", "KQs", "A9o", "A7s", "KJs", "A5s", "A6s", "A4s", "KTs", "A3s", "A2s"]
+  points: 9, range: ["99", "AJS", "88", "ATS", "AJO", "77", "66", "ATO", "A9S", "55", "A8S", "KQS", "A9O", "A7S", "KJS", "A5S", "A6S", "A4S", "KTS", "A3S", "A2S"]
 };
 let heroHands8 = {
-  points: 9, range: ["44", "A9o", "A7s", "KJs", "A5s", "A8o", "A6s", "A4s", "33", "KTs", "A7o", "A3s", "KQo", "A2s", "A5o", "A6o", "A4o", "KJo", "A3o", "22", "K9s", "A2o", "KTo"]
+  points: 9, range: ["44", "A9O", "A7S", "KJS", "A5S", "A8O", "A6S", "A4S", "33", "KTS", "A7O", "A3S", "KQO", "A2S", "A5O", "A6O", "A4O", "KJO", "A3O", "22", "K9S", "A2O", "KTO"]
 };
 let heroHands7 = {
-  points: 9, range: ["QTs", "K8s", "K7s", "JTs", "K9o", "K6s", "QJo"]
+  points: 9, range: ["QTS", "K8S", "K7S", "JTS", "K9O", "K6S", "QJO"]
 };
 let heroHands6 = {
-  points: 9, range: ["Q9s", "K5s", "K8o", "K4s", "QTo", "K7o", "K3s", "K2s", "Q8s", "K6o", "J9s", "K5o", "Q9o", "JTo", "K4o", "K3o", "K2o"]
+  points: 9, range: ["Q9S", "K5S", "K8O", "K4S", "QTO", "K7O", "K3S", "K2S", "Q8S", "K6O", "J9S", "K5O", "Q9O", "JTO", "K4O", "K3O", "K2O"]
 };
 let heroHands5 = {
-  points: 9, range: ["Q7s", "T9s", "Q6s", "J8s", "Q5s", "Q8o", "Q4s", "J9o", "Q3s", "J7s", "Q7o", "Q2s", "Q6o", "Q5o", "J8o", "J6s", "J5s", "Q4o", "J4s", "J7o", "Q3o", "J3s", "Q2o", "J2s", "J6o", "J5o", "J4o", "J3o", "J2o"]
+  points: 9, range: ["Q7S", "T9S", "Q6S", "J8S", "Q5S", "Q8O", "Q4S", "J9O", "Q3S", "J7S", "Q7O", "Q2S", "Q6O", "Q5O", "J8O", "J6S", "J5S", "Q4O", "J4S", "J7O", "Q3O", "J3S", "Q2O", "J2S", "J6O", "J5O", "J4O", "J3O", "J2O"]
 };
 let heroHands4 = {
-  points: 9, range: ["T9s", "T8s", "T9o", "T7s", "T8o", "T6s", "T7o", "T5s", "T4s", "T6o", "T3s", "T2s", "T5o", "T4o", "T3o", "T2o"]
+  points: 9, range: ["T9S", "T8S", "T9O", "T7S", "T8O", "T6S", "T7O", "T5S", "T4S", "T6O", "T3S", "T2S", "T5O", "T4O", "T3O", "T2O"]
 };
 let heroHands3 = {
-  points: 9, range: ["98s", "97s", "87s", "98o", "96s", "86s", "97o", "95s", "87o", "85s", "96o", "94s", "86o", "93s", "84s", "95o", "92s", "85o", "83s", "94o", "82s", "93o", "84o", "92o", "83o", "82o"]
+  points: 9, range: ["98S", "97S", "87S", "98O", "96S", "86S", "97O", "95S", "87O", "85S", "96O", "94S", "86O", "93S", "84S", "95O", "92S", "85O", "83S", "94O", "82S", "93O", "84O", "92O", "83O", "82O"]
 };
 let heroHands2 = {
-  points: 9, range: ["76s", "75s", "76o", "74s", "75o", "82s", "73s", "74o", "72s", "73o", "72o"]
+  points: 9, range: ["76S", "75S", "76O", "74S", "75O", "82S", "73S", "74O", "72S", "73O", "72O"]
 };
 let heroHands1 = {
-  points: 9, range: ["65s", "54s", "64s", "65o", "53s", "63s", "43s", "54o", "64o", "52s", "62s", "42s", "53o", "63o", "32s", "43o", "52o", "62o", "42o", "32o"]
+  points: 9, range: ["65S", "54S", "64S", "65O", "53S", "63S", "43S", "54O", "64O", "52S", "62S", "42S", "53O", "63O", "32S", "43O", "52O", "62O", "42O", "32O"]
 };
 
 let range = 1;
@@ -43,6 +44,41 @@ function onHandleScroll() {
     range++
   } else {
     range = 1;
+  }
+}
+
+function onHandChange(e) {
+  let handValue = document.getElementById("hand-value");
+  let heroHand = e.value.toUpperCase();
+  if (heroHands10.range.includes(heroHand)) {
+    handValue.innerHTML = 10;
+  }
+  if (heroHands9.range.includes(heroHand)) {
+    handValue.innerHTML = 9;
+  }
+  if (heroHands8.range.includes(heroHand)) {
+    handValue.innerHTML = 8;
+  }
+  if (heroHands7.range.includes(heroHand)) {
+    handValue.innerHTML = 7;
+  }
+  if (heroHands6.range.includes(heroHand)) {
+    handValue.innerHTML = 6;
+  }
+  if (heroHands5.range.includes(heroHand)) {
+    handValue.innerHTML = 5;
+  }
+  if (heroHands4.range.includes(heroHand)) {
+    handValue.innerHTML = 4;
+  }
+  if (heroHands3.range.includes(heroHand)) {
+    handValue.innerHTML = 3;
+  }
+  if (heroHands2.range.includes(heroHand)) {
+    handValue.innerHTML = 2;
+  }
+  if (heroHands1.range.includes(heroHand)) {
+    handValue.innerHTML = 1;
   }
 }
 
